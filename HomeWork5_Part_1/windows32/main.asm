@@ -10,77 +10,88 @@ INCLUDE io.h		; header file for input / output
 .STACK 4096			; reserve 4096-byte stack
 
 .DATA				; DATA section begins : reserve storage for data
-					; results are obtained with debugging
-					value		WORD	0FF9Ch
-					ax_value	WORD	00064h
 
+asciiIn		BYTE	20 DUP (?)
+prompt		BYTE	"Enter a character", 00h
+
+msgLabel	BYTE	"Result", 00h
+msgText		BYTE	"Upper count: "
+asciiUpper	BYTE	11 DUP (?), 0dh, 0ah 
+			BYTE	"Lower count: "
+asciiLower	BYTE	11 DUP (?), 0dh, 0ah
+			BYTE	"Other count: "
+asciiOther	BYTE	11 DUP (?), 00h
+
+lowerCount	DWORD	0
+upperCount	DWORD	0
+otherCount	DWORD	0
+count		DWORD	0
+
+a			DWORD	061h;
+z			DWORD	07Ah				
+A			DWORD	041h;
+Z			DWORD	05Ah;
+			
 .CODE				; Code section begins
 
 _MainProc			PROC
 
-					; initialize registers
-					mov eax, 0;
-					mov ebx, 0;
-					mov ecx, 0;
-					mov edx, 0;
+			mov		ecx, 0;
+			mov		eax, 0;
 
-					; PART I
+beginLoop:	cmp		ecx, 10					; while count < 10
+			jg		done	
 
-					; a.
-					;call _loadAX
-					;cmp		value, ax
-					;jl		next
+			; read in character
+			input	prompt, asciiIn, 20
+			atod	asciiIn
+			
+			; compare ranges, a ~ z, A ~ Z
+			; jump accordingly
+			mov eax, asciiIn
+			cmp eax, A
+			jl isOther
+			cmp eax, Z
+			jle isUpper
+			cmp eax, a
+			jl isOther
+			cmp eax, z
+			jle isLower
 
-					; b.
-					call _loadAX
-					cmp		ax, value
-					jnbe	next
+isOther:	
+			mov edx, 0
+			mov edx, isOther
+			inc	edx
+			mov isOther, edx
+			jmp endLoop
 
-					; c. 
-					call _loadAX
-					cmp		value, -100
-					jne		next
+isUpper:	
+			mov edx, 0
+			mov edx, isUpper
+			inc	edx
+			mov isUpper, edx
+			jmp endLoop
 
-					; d.
-					call _loadAX
-					cmp		ax, 100
-					jg		next
+isLower:	
+			mov edx, 0
+			mov edx, isLower
+			inc	edx
+			mov isLower, edx
 
-					; e.
-					call _loadAX
-					add		value, 100		
-					jz		next
+endLoop:	
+			inc ecx			; counter ++
+			jmp	beginLoop	; manual loops r fun.	
 
-					; f.
-					call _loadAX
-					add		value, 100
-					jno		next
+done:		
+			; output results
+			dtoa	asciiUpper, upperCount
+			dtoa	asciiLower, lowerCount
+			dtoa	asciiOther, otherCount
 
-					; g.
-					call _loadAX
-					add		value, 100
-					jc		next
-					
-					; h.
-					call _loadAX
-					add		value, 100
-					js		next
-					
-next:				
+			output	msgLabel, msgText
+			mov		eax, 0;
+			ret
 
-
-					; program end				
-					mov		eax, 0;				; exit w/ return code 0
-					ret
 _MainProc			ENDP						; end of main procedure
 					
-
-					; load the AX register w/ the value for each example
-_loadAX				PROC
-					mov		eax, 0
-					mov		ax, ax_value
-					ret
-_loadAX				ENDP
-
-
 					END							; end of source code
