@@ -1,0 +1,210 @@
+Microsoft (R) Macro Assembler Version 11.00.61030.0	    02/28/16 19:03:54
+main.asm						     Page 1 - 1
+
+
+				; FileName : main.asm
+				; Author : Norris, Joel R
+				; Date : 2016_02_08
+				; Project : HomeWork 5
+
+				; Assembler directives
+				.586				; accept instructions for 586
+				.MODEL FLAT			; generate code for flat memory
+				INCLUDE io.h		; header file for input / output
+			      C ; IO.H -- header file for I/O macros (listing suppressed)
+			      C .NOLIST      ; turn off listing
+			      C .LIST        ; begin listing
+			      C 
+				.STACK 4096			; reserve 4096-byte stack
+
+ 00000000			.DATA				; DATA section begins : reserve storage for data
+
+ 00000000  00000014 [		asciiIn		DWORD	20 DUP (?)
+	    00000000
+	   ]
+ 00000050 45 6E 74 65 72	prompt		BYTE	"Enter a character", 00h
+	   20 61 20 63 68
+	   61 72 61 63 74
+	   65 72 00
+
+ 00000062 52 65 73 75 6C	msgLabel	BYTE	"Result", 00h
+	   74 00
+ 00000069 55 70 70 65 72	msgText		BYTE	"Upper count: "
+	   20 63 6F 75 6E
+	   74 3A 20
+ 00000076  0000000B [		asciiUpper	BYTE	11 DUP (?), 0dh, 0ah 
+	    00
+	   ] 0D 0A
+ 00000083  4C 6F 77 65 72				BYTE	"Lower count: "
+	   20 63 6F 75 6E
+	   74 3A 20
+ 00000090  0000000B [		asciiLower	BYTE	11 DUP (?), 0dh, 0ah
+	    00
+	   ] 0D 0A
+ 0000009D  4F 74 68 65 72				BYTE	"Other count: "
+	   20 63 6F 75 6E
+	   74 3A 20
+ 000000AA  0000000B [		asciiOther	BYTE	11 DUP (?), 00h
+	    00
+	   ] 00
+
+ 000000B6 00000000		lowerCount	DWORD	0
+ 000000BA 00000000		upperCount	DWORD	0
+ 000000BE 00000000		otherCount	DWORD	0
+ 000000C2 00000000		count		DWORD	0
+
+ 000000C6 00000000		asciiHex	DWORD	0
+ 000000CA 00000061		lowera		DWORD	061h
+ 000000CE 0000007A		lowerz		DWORD	07Ah				
+ 000000D2 00000041		upperA		DWORD	041h
+ 000000D6 0000005A		upperZ		DWORD	05Ah
+							
+ 00000000			.CODE				; Code section begins
+
+ 00000000			_MainProc			PROC
+
+ 00000000  B9 00000000					mov		ecx, 0
+ 00000005  B8 00000000					mov		eax, 0
+
+ 0000000A  83 F9 0A		beginLoop:	cmp		ecx, 10					; while count < 10
+ 0000000D  0F 8D 00000088				jge		done	
+
+							; read in character
+							input	prompt, asciiIn, 20
+							;atod	asciiIn					; convert asciiIn to 2's compliment DWORD int
+							;mov		asciiHex, eax
+ 00000031  A1 00000000 R				mov		eax, asciiIn
+							
+							; compare ranges, a ~ z, A ~ Z
+							; jump accordingly
+ 00000036  3B 05 000000D2 R				cmp eax, upperA
+ 0000003C  7C 18					jl isOther
+ 0000003E  3B 05 000000D6 R				cmp eax, upperZ
+ 00000044  7E 24					jle isUpper
+ 00000046  3B 05 000000CA R				cmp eax, lowera
+ 0000004C  7C 08					jl isOther
+ 0000004E  3B 05 000000CE R				cmp eax, lowerz
+ 00000054  7E 28					jle isLower
+
+ 00000056			isOther:	
+ 00000056  BA 00000000					mov edx, 0
+ 0000005B  8B 15 000000BE R				mov edx, otherCount
+ 00000061  42						inc	edx
+ 00000062  89 15 000000BE R				mov otherCount, edx
+ 00000068  EB 2B					jmp endLoop
+
+ 0000006A			isUpper:	
+ 0000006A  BA 00000000					mov edx, 0
+ 0000006F  8B 15 000000BA R				mov edx, upperCount
+ 00000075  42						inc	edx
+ 00000076  89 15 000000BA R				mov upperCount, edx
+ 0000007C  EB 17					jmp endLoop
+
+ 0000007E			isLower:	
+ 0000007E  BA 00000000					mov edx, 0
+ 00000083  8B 15 000000B6 R				mov edx, lowerCount
+ 00000089  42						inc	edx
+ 0000008A  89 15 000000B6 R				mov lowerCount, edx
+
+ 00000090			doCount:
+ 00000090  8B 13					mov edx, [ebx]
+ 00000092  42						inc edx
+ 00000093  89 13					mov [ebx], edx
+
+ 00000095			endLoop:	
+ 00000095  41						inc ecx			; counter ++
+ 00000096  E9 FFFFFF6F					jmp	beginLoop	; manual loops r fun.	
+
+ 0000009B			done:		
+							; output results
+							dtoa	asciiUpper, upperCount
+							dtoa	asciiLower, lowerCount
+							dtoa	asciiOther, otherCount
+
+							output	msgLabel, msgText
+ 00000108  B8 00000000					mov		eax, 0;
+ 0000010D  C3						ret
+
+ 0000010E			_MainProc			ENDP						; end of main procedure
+									
+									END							; end of source code
+Microsoft (R) Macro Assembler Version 11.00.61030.0	    02/28/16 19:03:54
+main.asm						     Symbols 2 - 1
+
+
+
+
+Macros:
+
+                N a m e                 Type
+
+atod . . . . . . . . . . . . . .	Proc
+atow . . . . . . . . . . . . . .	Proc
+dtoa . . . . . . . . . . . . . .	Proc
+input  . . . . . . . . . . . . .	Proc
+output . . . . . . . . . . . . .	Proc
+wtoa . . . . . . . . . . . . . .	Proc
+
+
+Segments and Groups:
+
+                N a m e                 Size     Length   Align   Combine Class
+
+FLAT . . . . . . . . . . . . . .	GROUP
+STACK  . . . . . . . . . . . . .	32 Bit	 00001000 Para	  Stack	  'STACK'	 
+_DATA  . . . . . . . . . . . . .	32 Bit	 000000DA Para	  Public  'DATA'	
+_TEXT  . . . . . . . . . . . . .	32 Bit	 0000010E Para	  Public  'CODE'	
+
+
+Procedures, parameters, and locals:
+
+                N a m e                 Type     Value    Attr
+
+_MainProc  . . . . . . . . . . .	P Near	 00000000 _TEXT	Length= 0000010E Public
+  beginLoop  . . . . . . . . . .	L Near	 0000000A _TEXT	
+  isOther  . . . . . . . . . . .	L Near	 00000056 _TEXT	
+  isUpper  . . . . . . . . . . .	L Near	 0000006A _TEXT	
+  isLower  . . . . . . . . . . .	L Near	 0000007E _TEXT	
+  doCount  . . . . . . . . . . .	L Near	 00000090 _TEXT	
+  endLoop  . . . . . . . . . . .	L Near	 00000095 _TEXT	
+  done . . . . . . . . . . . . .	L Near	 0000009B _TEXT	
+
+
+Symbols:
+
+                N a m e                 Type     Value    Attr
+
+@CodeSize  . . . . . . . . . . .	Number	 00000000h   
+@DataSize  . . . . . . . . . . .	Number	 00000000h   
+@Interface . . . . . . . . . . .	Number	 00000000h   
+@Model . . . . . . . . . . . . .	Number	 00000007h   
+@code  . . . . . . . . . . . . .	Text   	 _TEXT
+@data  . . . . . . . . . . . . .	Text   	 FLAT
+@fardata?  . . . . . . . . . . .	Text   	 FLAT
+@fardata . . . . . . . . . . . .	Text   	 FLAT
+@stack . . . . . . . . . . . . .	Text   	 FLAT
+_getInput  . . . . . . . . . . .	L Near	 00000000 FLAT	External
+_showOutput  . . . . . . . . . .	L Near	 00000000 FLAT	External
+asciiHex . . . . . . . . . . . .	DWord	 000000C6 _DATA	
+asciiIn  . . . . . . . . . . . .	DWord	 00000000 _DATA	
+asciiLower . . . . . . . . . . .	Byte	 00000090 _DATA	
+asciiOther . . . . . . . . . . .	Byte	 000000AA _DATA	
+asciiUpper . . . . . . . . . . .	Byte	 00000076 _DATA	
+atodproc . . . . . . . . . . . .	L Near	 00000000 FLAT	External
+atowproc . . . . . . . . . . . .	L Near	 00000000 FLAT	External
+count  . . . . . . . . . . . . .	DWord	 000000C2 _DATA	
+dtoaproc . . . . . . . . . . . .	L Near	 00000000 FLAT	External
+lowerCount . . . . . . . . . . .	DWord	 000000B6 _DATA	
+lowera . . . . . . . . . . . . .	DWord	 000000CA _DATA	
+lowerz . . . . . . . . . . . . .	DWord	 000000CE _DATA	
+msgLabel . . . . . . . . . . . .	Byte	 00000062 _DATA	
+msgText  . . . . . . . . . . . .	Byte	 00000069 _DATA	
+otherCount . . . . . . . . . . .	DWord	 000000BE _DATA	
+prompt . . . . . . . . . . . . .	Byte	 00000050 _DATA	
+upperA . . . . . . . . . . . . .	DWord	 000000D2 _DATA	
+upperCount . . . . . . . . . . .	DWord	 000000BA _DATA	
+upperZ . . . . . . . . . . . . .	DWord	 000000D6 _DATA	
+wtoaproc . . . . . . . . . . . .	L Near	 00000000 FLAT	External
+
+	   0 Warnings
+	   0 Errors
