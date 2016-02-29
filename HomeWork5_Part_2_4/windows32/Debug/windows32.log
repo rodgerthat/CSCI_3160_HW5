@@ -1,0 +1,321 @@
+﻿Build started 2/29/2016 10:02:00.
+     1>Project "C:\Users\Joel\MTSU\CSCI_3160\HW5\HomeWork5_Part_2_4\windows32\windows32.vcxproj" on node 2 (Build target(s)).
+     1>_MASM:
+         Assembling main.asm...
+         cmd.exe /C "C:\Users\Joel\AppData\Local\Temp\tmpcb9802c2578044e1927a859ffccf2299.cmd"
+         ml.exe /c /nologo /Zi /Fo"Debug\main.obj" /W3 /errorReport:prompt /Fl /Tamain.asm
+       ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _WINDOWS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /FAcs /Fa"Debug\\" /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TC /showIncludes /analyze- /errorReport:prompt framework.c
+         framework.c
+         Note: including file: C:\Program Files (x86)\Windows Kits\8.0\Include\um\windows.h
+         Note: including file:  C:\Program Files (x86)\Windows Kits\8.0\Include\shared\winapifamily.h
+         Note: including file:  C:\Program Files (x86)\Windows Kits\8.0\Include\shared\sdkddkver.h
+         Note: including file:  C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\excpt.h
+         Note: including file:   C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\crtdefs.h
+         Note: including file:    C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\sal.h
+         Note: including file:     C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\ConcurrencySal.h
+         Note: including file:    C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\vadefs.h
+         Note: including file:  C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\stdarg.h
+         Note: including file:  C:\Program Files (x86)\Windows Kits\8.0\Include\shared\windef.h
+         Note: including file:   C:\Program Files (x86)\Windows Kits\8.0\Include\shared\minwindef.h
+         Note: including file:    C:\Program Files (x86)\Windows Kits\8.0\Include\shared\specstrings.h
+         Note: including file:     C:\Program Files (x86)\Windows Kits\8.0\Include\shared\specstrings_strict.h
+         Note: including file:      C:\Program Files (x86)\Windows Kits\8.0\Include\shared\specstrings_undef.h
+         Note: including file:     C:\Program Files (x86)\Windows Kits\8.0\Include\shared\driverspecs.h
+         Note: including file:      c:\program files (x86)\windows kits\8.0\include\shared\sdv_driverspecs.h
+         Note: including file:    C:\Program Files (x86)\Windows Kits\8.0\Include\um\winnt.h
+         Note: including file:     C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\ctype.h
+         Note: including file:      C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\crtdefs.h
+         Note: including file:     C:\Program Files (x86)\Windows Kits\8.0\Include\shared\kernelspecs.h
+         Note: including file:     C:\Program Files (x86)\Windows Kits\8.0\Include\shared\basetsd.h
+         Note: including file:     C:\Program Files (x86)\Windows Kits\8.0\Include\shared\guiddef.h
+         Note: including file:      C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h
+         Note: including file:       C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\crtdefs.h
+         Note: including file:     c:\program files (x86)\windows kits\8.0\include\shared\pshpack4.h
+         Note: including file:     c:\program files (x86)\windows kits\8.0\include\shared\poppack.h
+         Note: including file:     c:\program files (x86)\windows kits\8.0\include\shared\pshpack4.h
+         Note: including file:     c:\program files (x86)\windows kits\8.0\include\shared\poppack.h
+         Note: including file:     C:\Program Files (x86)\Windows Kits\8.0\Include\shared\pshpack4.h
+         Note: including file:     C:\Program Files (x86)\Windows Kits\8.0\Include\shared\poppack.h
+         Note: including file:     c:\program files (x86)\windows kits\8.0\include\shared\pshpack4.h
+         Note: including file:     c:\program files (x86)\windows kits\8.0\include\shared\pshpack2.h
+         Note: including file:     c:\program files (x86)\windows kits\8.0\include\shared\poppack.h
+         Note: including file:     c:\program files (x86)\windows kits\8.0\include\shared\pshpack2.h
+         Note: including file:     C:\Program Files (x86)\Windows Kits\8.0\Include\shared\pshpack2.h
+         Note: including file:     C:\Program Files (x86)\Windows Kits\8.0\Include\shared\poppack.h
+         Note: including file:     c:\program files (x86)\windows kits\8.0\include\shared\poppack.h
+         Note: including file:     c:\program files (x86)\windows kits\8.0\include\shared\pshpack8.h
+         Note: including file:     c:\program files (x86)\windows kits\8.0\include\shared\poppack.h
+         Note: including file:     c:\program files (x86)\windows kits\8.0\include\shared\poppack.h
+         Note: including file:     C:\Program Files (x86)\Windows Kits\8.0\Include\shared\apiset.h
+         Note: including file:     C:\Program Files (x86)\Windows Kits\8.0\Include\shared\ktmtypes.h
+         Note: including file:   C:\Program Files (x86)\Windows Kits\8.0\Include\um\winnt.h
+         Note: including file:  C:\Program Files (x86)\Windows Kits\8.0\Include\um\winbase.h
+         Note: including file:   C:\Program Files (x86)\Windows Kits\8.0\Include\shared\apisetcconv.h
+         Note: including file:   C:\Program Files (x86)\Windows Kits\8.0\Include\um\minwinbase.h
+         Note: including file:   C:\Program Files (x86)\Windows Kits\8.0\Include\um\processenv.h
+         Note: including file:    C:\Program Files (x86)\Windows Kits\8.0\Include\shared\apiset.h
+         Note: including file:    C:\Program Files (x86)\Windows Kits\8.0\Include\shared\apisetcconv.h
+         Note: including file:   C:\Program Files (x86)\Windows Kits\8.0\Include\um\fileapi.h
+         Note: including file:    C:\Program Files (x86)\Windows Kits\8.0\Include\shared\apiset.h
+         Note: including file:    C:\Program Files (x86)\Windows Kits\8.0\Include\shared\apisetcconv.h
+         Note: including file:   C:\Program Files (x86)\Windows Kits\8.0\Include\um\debugapi.h
+         Note: including file:    C:\Program Files (x86)\Windows Kits\8.0\Include\shared\apiset.h
+         Note: including file:    C:\Program Files (x86)\Windows Kits\8.0\Include\shared\apisetcconv.h
+         Note: including file:   C:\Program Files (x86)\Windows Kits\8.0\Include\um\utilapiset.h
+         Note: including file:    C:\Program Files (x86)\Windows Kits\8.0\Include\shared\apiset.h
+         Note: including file:    C:\Program Files (x86)\Windows Kits\8.0\Include\shared\apisetcconv.h
+         Note: including file:   C:\Program Files (x86)\Windows Kits\8.0\Include\um\handleapi.h
+         Note: including file:    C:\Program Files (x86)\Windows Kits\8.0\Include\shared\apiset.h
+         Note: including file:    C:\Program Files (x86)\Windows Kits\8.0\Include\shared\apisetcconv.h
+         Note: including file:   C:\Program Files (x86)\Windows Kits\8.0\Include\um\errhandlingapi.h
+         Note: including file:    C:\Program Files (x86)\Windows Kits\8.0\Include\shared\apiset.h
+         Note: including file:    C:\Program Files (x86)\Windows Kits\8.0\Include\shared\apisetcconv.h
+         Note: including file:   C:\Program Files (x86)\Windows Kits\8.0\Include\um\fibersapi.h
+         Note: including file:    C:\Program Files (x86)\Windows Kits\8.0\Include\shared\apiset.h
+         Note: including file:    C:\Program Files (x86)\Windows Kits\8.0\Include\shared\apisetcconv.h
+         Note: including file:   C:\Program Files (x86)\Windows Kits\8.0\Include\um\namedpipeapi.h
+         Note: including file:    C:\Program Files (x86)\Windows Kits\8.0\Include\shared\apiset.h
+         Note: including file:    C:\Program Files (x86)\Windows Kits\8.0\Include\shared\apisetcconv.h
+         Note: including file:   C:\Program Files (x86)\Windows Kits\8.0\Include\um\profileapi.h
+         Note: including file:    C:\Program Files (x86)\Windows Kits\8.0\Include\shared\apiset.h
+         Note: including file:    C:\Program Files (x86)\Windows Kits\8.0\Include\shared\apisetcconv.h
+         Note: including file:   C:\Program Files (x86)\Windows Kits\8.0\Include\um\heapapi.h
+         Note: including file:    C:\Program Files (x86)\Windows Kits\8.0\Include\shared\apiset.h
+         Note: including file:    C:\Program Files (x86)\Windows Kits\8.0\Include\shared\apisetcconv.h
+         Note: including file:   C:\Program Files (x86)\Windows Kits\8.0\Include\um\ioapiset.h
+         Note: including file:    C:\Program Files (x86)\Windows Kits\8.0\Include\shared\apiset.h
+         Note: including file:    C:\Program Files (x86)\Windows Kits\8.0\Include\shared\apisetcconv.h
+         Note: including file:   C:\Program Files (x86)\Windows Kits\8.0\Include\um\synchapi.h
+         Note: including file:    C:\Program Files (x86)\Windows Kits\8.0\Include\shared\apiset.h
+         Note: including file:    C:\Program Files (x86)\Windows Kits\8.0\Include\shared\apisetcconv.h
+         Note: including file:   C:\Program Files (x86)\Windows Kits\8.0\Include\um\interlockedapi.h
+         Note: including file:    C:\Program Files (x86)\Windows Kits\8.0\Include\shared\apiset.h
+         Note: including file:    C:\Program Files (x86)\Windows Kits\8.0\Include\shared\apisetcconv.h
+         Note: including file:   C:\Program Files (x86)\Windows Kits\8.0\Include\um\processthreadsapi.h
+         Note: including file:    C:\Program Files (x86)\Windows Kits\8.0\Include\shared\apiset.h
+         Note: including file:    C:\Program Files (x86)\Windows Kits\8.0\Include\shared\apisetcconv.h
+         Note: including file:   C:\Program Files (x86)\Windows Kits\8.0\Include\um\sysinfoapi.h
+         Note: including file:    C:\Program Files (x86)\Windows Kits\8.0\Include\shared\apiset.h
+         Note: including file:    C:\Program Files (x86)\Windows Kits\8.0\Include\shared\apisetcconv.h
+         Note: including file:   C:\Program Files (x86)\Windows Kits\8.0\Include\um\memoryapi.h
+         Note: including file:    C:\Program Files (x86)\Windows Kits\8.0\Include\shared\apiset.h
+         Note: including file:    C:\Program Files (x86)\Windows Kits\8.0\Include\shared\apisetcconv.h
+         Note: including file:   C:\Program Files (x86)\Windows Kits\8.0\Include\um\threadpoollegacyapiset.h
+         Note: including file:    C:\Program Files (x86)\Windows Kits\8.0\Include\shared\apiset.h
+         Note: including file:    C:\Program Files (x86)\Windows Kits\8.0\Include\shared\apisetcconv.h
+         Note: including file:   C:\Program Files (x86)\Windows Kits\8.0\Include\um\threadpoolapiset.h
+         Note: including file:    C:\Program Files (x86)\Windows Kits\8.0\Include\shared\apiset.h
+         Note: including file:    C:\Program Files (x86)\Windows Kits\8.0\Include\shared\apisetcconv.h
+         Note: including file:   C:\Program Files (x86)\Windows Kits\8.0\Include\um\bemapiset.h
+         Note: including file:    C:\Program Files (x86)\Windows Kits\8.0\Include\shared\apiset.h
+         Note: including file:    C:\Program Files (x86)\Windows Kits\8.0\Include\shared\apisetcconv.h
+         Note: including file:   C:\Program Files (x86)\Windows Kits\8.0\Include\um\jobapi.h
+         Note: including file:    C:\Program Files (x86)\Windows Kits\8.0\Include\shared\apiset.h
+         Note: including file:    C:\Program Files (x86)\Windows Kits\8.0\Include\shared\apisetcconv.h
+         Note: including file:   C:\Program Files (x86)\Windows Kits\8.0\Include\um\wow64apiset.h
+         Note: including file:    C:\Program Files (x86)\Windows Kits\8.0\Include\shared\apiset.h
+         Note: including file:    C:\Program Files (x86)\Windows Kits\8.0\Include\shared\apisetcconv.h
+         Note: including file:   C:\Program Files (x86)\Windows Kits\8.0\Include\um\libloaderapi.h
+         Note: including file:    C:\Program Files (x86)\Windows Kits\8.0\Include\shared\apiset.h
+         Note: including file:    C:\Program Files (x86)\Windows Kits\8.0\Include\shared\apisetcconv.h
+         Note: including file:   C:\Program Files (x86)\Windows Kits\8.0\Include\um\securitybaseapi.h
+         Note: including file:    C:\Program Files (x86)\Windows Kits\8.0\Include\shared\apiset.h
+         Note: including file:    C:\Program Files (x86)\Windows Kits\8.0\Include\shared\apisetcconv.h
+         Note: including file:   C:\Program Files (x86)\Windows Kits\8.0\Include\um\namespaceapi.h
+         Note: including file:    C:\Program Files (x86)\Windows Kits\8.0\Include\shared\apiset.h
+         Note: including file:    C:\Program Files (x86)\Windows Kits\8.0\Include\shared\apisetcconv.h
+         Note: including file:   C:\Program Files (x86)\Windows Kits\8.0\Include\um\systemtopologyapi.h
+         Note: including file:    C:\Program Files (x86)\Windows Kits\8.0\Include\shared\apiset.h
+         Note: including file:    C:\Program Files (x86)\Windows Kits\8.0\Include\shared\apisetcconv.h
+         Note: including file:   C:\Program Files (x86)\Windows Kits\8.0\Include\um\processtopologyapi.h
+         Note: including file:    C:\Program Files (x86)\Windows Kits\8.0\Include\shared\apiset.h
+         Note: including file:    C:\Program Files (x86)\Windows Kits\8.0\Include\shared\apisetcconv.h
+         Note: including file:   C:\Program Files (x86)\Windows Kits\8.0\Include\um\securityappcontainer.h
+         Note: including file:    C:\Program Files (x86)\Windows Kits\8.0\Include\shared\apiset.h
+         Note: including file:    C:\Program Files (x86)\Windows Kits\8.0\Include\shared\apisetcconv.h
+         Note: including file:   C:\Program Files (x86)\Windows Kits\8.0\Include\um\realtimeapiset.h
+         Note: including file:    C:\Program Files (x86)\Windows Kits\8.0\Include\shared\apiset.h
+         Note: including file:    C:\Program Files (x86)\Windows Kits\8.0\Include\shared\apisetcconv.h
+         Note: including file:   C:\Program Files (x86)\Windows Kits\8.0\Include\shared\winerror.h
+         Note: including file:   C:\Program Files (x86)\Windows Kits\8.0\Include\um\timezoneapi.h
+         Note: including file:    C:\Program Files (x86)\Windows Kits\8.0\Include\shared\apiset.h
+         Note: including file:    C:\Program Files (x86)\Windows Kits\8.0\Include\shared\apisetcconv.h
+         Note: including file:  C:\Program Files (x86)\Windows Kits\8.0\Include\um\wingdi.h
+         Note: including file:   C:\Program Files (x86)\Windows Kits\8.0\Include\shared\pshpack1.h
+         Note: including file:   C:\Program Files (x86)\Windows Kits\8.0\Include\shared\poppack.h
+         Note: including file:   C:\Program Files (x86)\Windows Kits\8.0\Include\shared\pshpack2.h
+         Note: including file:   C:\Program Files (x86)\Windows Kits\8.0\Include\shared\poppack.h
+         Note: including file:   C:\Program Files (x86)\Windows Kits\8.0\Include\shared\pshpack2.h
+         Note: including file:   C:\Program Files (x86)\Windows Kits\8.0\Include\shared\poppack.h
+         Note: including file:   C:\Program Files (x86)\Windows Kits\8.0\Include\shared\pshpack4.h
+         Note: including file:   C:\Program Files (x86)\Windows Kits\8.0\Include\shared\poppack.h
+         Note: including file:   C:\Program Files (x86)\Windows Kits\8.0\Include\shared\pshpack4.h
+         Note: including file:   C:\Program Files (x86)\Windows Kits\8.0\Include\shared\poppack.h
+         Note: including file:  C:\Program Files (x86)\Windows Kits\8.0\Include\um\winuser.h
+         Note: including file:   C:\Program Files (x86)\Windows Kits\8.0\Include\shared\pshpack2.h
+         Note: including file:   C:\Program Files (x86)\Windows Kits\8.0\Include\shared\poppack.h
+         Note: including file:   C:\Program Files (x86)\Windows Kits\8.0\Include\shared\tvout.h
+         Note: including file:  C:\Program Files (x86)\Windows Kits\8.0\Include\um\winnls.h
+         Note: including file:   C:\Program Files (x86)\Windows Kits\8.0\Include\um\datetimeapi.h
+         Note: including file:    C:\Program Files (x86)\Windows Kits\8.0\Include\shared\apiset.h
+         Note: including file:    C:\Program Files (x86)\Windows Kits\8.0\Include\shared\apisetcconv.h
+         Note: including file:   C:\Program Files (x86)\Windows Kits\8.0\Include\um\stringapiset.h
+         Note: including file:    C:\Program Files (x86)\Windows Kits\8.0\Include\shared\apiset.h
+         Note: including file:    C:\Program Files (x86)\Windows Kits\8.0\Include\shared\apisetcconv.h
+         Note: including file:    C:\Program Files (x86)\Windows Kits\8.0\Include\um\winnls.h
+         Note: including file:  C:\Program Files (x86)\Windows Kits\8.0\Include\um\wincon.h
+         Note: including file:   C:\Program Files (x86)\Windows Kits\8.0\Include\um\consoleapi.h
+         Note: including file:    C:\Program Files (x86)\Windows Kits\8.0\Include\shared\apiset.h
+         Note: including file:    C:\Program Files (x86)\Windows Kits\8.0\Include\shared\apisetcconv.h
+         Note: including file:  C:\Program Files (x86)\Windows Kits\8.0\Include\um\winver.h
+         Note: including file:   C:\Program Files (x86)\Windows Kits\8.0\Include\um\verrsrc.h
+         Note: including file:  C:\Program Files (x86)\Windows Kits\8.0\Include\um\winreg.h
+         Note: including file:   C:\Program Files (x86)\Windows Kits\8.0\Include\shared\apiset.h
+         Note: including file:   C:\Program Files (x86)\Windows Kits\8.0\Include\shared\apisetcconv.h
+         Note: including file:   C:\Program Files (x86)\Windows Kits\8.0\Include\um\reason.h
+         Note: including file:  C:\Program Files (x86)\Windows Kits\8.0\Include\um\winnetwk.h
+         Note: including file:   C:\Program Files (x86)\Windows Kits\8.0\Include\shared\wnnc.h
+         Note: including file:  C:\Program Files (x86)\Windows Kits\8.0\Include\shared\cderr.h
+         Note: including file:  C:\Program Files (x86)\Windows Kits\8.0\Include\um\dde.h
+         Note: including file:  C:\Program Files (x86)\Windows Kits\8.0\Include\um\ddeml.h
+         Note: including file:  C:\Program Files (x86)\Windows Kits\8.0\Include\um\dlgs.h
+         Note: including file:  C:\Program Files (x86)\Windows Kits\8.0\Include\um\lzexpand.h
+         Note: including file:  C:\Program Files (x86)\Windows Kits\8.0\Include\um\mmsystem.h
+         Note: including file:   C:\Program Files (x86)\Windows Kits\8.0\Include\um\mmsyscom.h
+         Note: including file:    C:\Program Files (x86)\Windows Kits\8.0\Include\shared\pshpack1.h
+         Note: including file:    C:\Program Files (x86)\Windows Kits\8.0\Include\shared\poppack.h
+         Note: including file:   C:\Program Files (x86)\Windows Kits\8.0\Include\shared\pshpack1.h
+         Note: including file:   C:\Program Files (x86)\Windows Kits\8.0\Include\um\mciapi.h
+         Note: including file:    C:\Program Files (x86)\Windows Kits\8.0\Include\shared\apiset.h
+         Note: including file:    C:\Program Files (x86)\Windows Kits\8.0\Include\shared\apisetcconv.h
+         Note: including file:    C:\Program Files (x86)\Windows Kits\8.0\Include\um\mmsyscom.h
+         Note: including file:   C:\Program Files (x86)\Windows Kits\8.0\Include\um\mmiscapi.h
+         Note: including file:    C:\Program Files (x86)\Windows Kits\8.0\Include\shared\apiset.h
+         Note: including file:    C:\Program Files (x86)\Windows Kits\8.0\Include\shared\apisetcconv.h
+         Note: including file:    C:\Program Files (x86)\Windows Kits\8.0\Include\um\mmsyscom.h
+         Note: including file:   C:\Program Files (x86)\Windows Kits\8.0\Include\um\mmiscapi2.h
+         Note: including file:    C:\Program Files (x86)\Windows Kits\8.0\Include\shared\apiset.h
+         Note: including file:    C:\Program Files (x86)\Windows Kits\8.0\Include\shared\apisetcconv.h
+         Note: including file:    C:\Program Files (x86)\Windows Kits\8.0\Include\um\mmsyscom.h
+         Note: including file:   C:\Program Files (x86)\Windows Kits\8.0\Include\um\playsoundapi.h
+         Note: including file:    C:\Program Files (x86)\Windows Kits\8.0\Include\shared\apiset.h
+         Note: including file:    C:\Program Files (x86)\Windows Kits\8.0\Include\shared\apisetcconv.h
+         Note: including file:    C:\Program Files (x86)\Windows Kits\8.0\Include\um\mmsyscom.h
+         Note: including file:   C:\Program Files (x86)\Windows Kits\8.0\Include\um\mmeapi.h
+         Note: including file:    C:\Program Files (x86)\Windows Kits\8.0\Include\shared\apiset.h
+         Note: including file:    C:\Program Files (x86)\Windows Kits\8.0\Include\shared\apisetcconv.h
+         Note: including file:    C:\Program Files (x86)\Windows Kits\8.0\Include\um\mmsyscom.h
+         Note: including file:   C:\Program Files (x86)\Windows Kits\8.0\Include\um\timeapi.h
+         Note: including file:    C:\Program Files (x86)\Windows Kits\8.0\Include\shared\apiset.h
+         Note: including file:    C:\Program Files (x86)\Windows Kits\8.0\Include\shared\apisetcconv.h
+         Note: including file:    C:\Program Files (x86)\Windows Kits\8.0\Include\um\mmsyscom.h
+         Note: including file:   C:\Program Files (x86)\Windows Kits\8.0\Include\um\joystickapi.h
+         Note: including file:    C:\Program Files (x86)\Windows Kits\8.0\Include\shared\apiset.h
+         Note: including file:    C:\Program Files (x86)\Windows Kits\8.0\Include\shared\apisetcconv.h
+         Note: including file:    C:\Program Files (x86)\Windows Kits\8.0\Include\um\mmsyscom.h
+         Note: including file:   C:\Program Files (x86)\Windows Kits\8.0\Include\shared\poppack.h
+         Note: including file:  C:\Program Files (x86)\Windows Kits\8.0\Include\um\nb30.h
+         Note: including file:  C:\Program Files (x86)\Windows Kits\8.0\Include\shared\rpc.h
+         Note: including file:   C:\Program Files (x86)\Windows Kits\8.0\Include\shared\rpcdce.h
+         Note: including file:    C:\Program Files (x86)\Windows Kits\8.0\Include\shared\rpcdcep.h
+         Note: including file:   C:\Program Files (x86)\Windows Kits\8.0\Include\um\rpcnsi.h
+         Note: including file:   C:\Program Files (x86)\Windows Kits\8.0\Include\shared\rpcnterr.h
+         Note: including file:   C:\Program Files (x86)\Windows Kits\8.0\Include\shared\rpcasync.h
+         Note: including file:  C:\Program Files (x86)\Windows Kits\8.0\Include\um\shellapi.h
+         Note: including file:   C:\Program Files (x86)\Windows Kits\8.0\Include\shared\pshpack1.h
+         Note: including file:   C:\Program Files (x86)\Windows Kits\8.0\Include\shared\poppack.h
+         Note: including file:  C:\Program Files (x86)\Windows Kits\8.0\Include\um\winperf.h
+         Note: including file:   C:\Program Files (x86)\Windows Kits\8.0\Include\shared\pshpack8.h
+         Note: including file:   C:\Program Files (x86)\Windows Kits\8.0\Include\shared\poppack.h
+         Note: including file:  C:\Program Files (x86)\Windows Kits\8.0\Include\um\winsock.h
+         Note: including file:   C:\Program Files (x86)\Windows Kits\8.0\Include\shared\inaddr.h
+         Note: including file:  C:\Program Files (x86)\Windows Kits\8.0\Include\um\wincrypt.h
+         Note: including file:   C:\Program Files (x86)\Windows Kits\8.0\Include\shared\bcrypt.h
+         Note: including file:   C:\Program Files (x86)\Windows Kits\8.0\Include\um\ncrypt.h
+         Note: including file:    C:\Program Files (x86)\Windows Kits\8.0\Include\shared\bcrypt.h
+         Note: including file:   C:\Program Files (x86)\Windows Kits\8.0\Include\um\dpapi.h
+         Note: including file:  C:\Program Files (x86)\Windows Kits\8.0\Include\um\winefs.h
+         Note: including file:  C:\Program Files (x86)\Windows Kits\8.0\Include\um\winscard.h
+         Note: including file:   C:\Program Files (x86)\Windows Kits\8.0\Include\shared\wtypes.h
+         Note: including file:    c:\program files (x86)\windows kits\8.0\include\shared\rpcndr.h
+         Note: including file:     C:\Program Files (x86)\Windows Kits\8.0\Include\shared\pshpack8.h
+         Note: including file:     C:\Program Files (x86)\Windows Kits\8.0\Include\um\rpcnsip.h
+         Note: including file:     C:\Program Files (x86)\Windows Kits\8.0\Include\shared\rpcsal.h
+         Note: including file:     C:\Program Files (x86)\Windows Kits\8.0\Include\shared\poppack.h
+         Note: including file:    c:\program files (x86)\windows kits\8.0\include\shared\wtypesbase.h
+         Note: including file:     c:\program files (x86)\windows kits\8.0\include\shared\guiddef.h
+         Note: including file:   C:\Program Files (x86)\Windows Kits\8.0\Include\um\winioctl.h
+         Note: including file:    C:\Program Files (x86)\Windows Kits\8.0\Include\shared\pshpack1.h
+         Note: including file:    C:\Program Files (x86)\Windows Kits\8.0\Include\shared\poppack.h
+         Note: including file:    C:\Program Files (x86)\Windows Kits\8.0\Include\shared\pshpack1.h
+         Note: including file:    C:\Program Files (x86)\Windows Kits\8.0\Include\shared\poppack.h
+         Note: including file:    C:\Program Files (x86)\Windows Kits\8.0\Include\shared\pshpack1.h
+         Note: including file:    C:\Program Files (x86)\Windows Kits\8.0\Include\shared\poppack.h
+         Note: including file:    C:\Program Files (x86)\Windows Kits\8.0\Include\shared\pshpack1.h
+         Note: including file:    C:\Program Files (x86)\Windows Kits\8.0\Include\shared\poppack.h
+         Note: including file:    C:\Program Files (x86)\Windows Kits\8.0\Include\shared\pshpack1.h
+         Note: including file:    C:\Program Files (x86)\Windows Kits\8.0\Include\shared\poppack.h
+         Note: including file:    C:\Program Files (x86)\Windows Kits\8.0\Include\shared\pshpack1.h
+         Note: including file:    C:\Program Files (x86)\Windows Kits\8.0\Include\shared\poppack.h
+         Note: including file:    C:\Program Files (x86)\Windows Kits\8.0\Include\shared\pshpack1.h
+         Note: including file:    C:\Program Files (x86)\Windows Kits\8.0\Include\shared\poppack.h
+         Note: including file:   C:\Program Files (x86)\Windows Kits\8.0\Include\shared\winsmcrd.h
+         Note: including file:  C:\Program Files (x86)\Windows Kits\8.0\Include\um\winspool.h
+         Note: including file:   C:\Program Files (x86)\Windows Kits\8.0\Include\um\prsht.h
+         Note: including file:    C:\Program Files (x86)\Windows Kits\8.0\Include\shared\pshpack4.h
+         Note: including file:    C:\Program Files (x86)\Windows Kits\8.0\Include\shared\poppack.h
+         Note: including file:  C:\Program Files (x86)\Windows Kits\8.0\Include\um\ole2.h
+         Note: including file:   C:\Program Files (x86)\Windows Kits\8.0\Include\shared\pshpack8.h
+         Note: including file:   C:\Program Files (x86)\Windows Kits\8.0\Include\um\objbase.h
+         Note: including file:    C:\Program Files (x86)\Windows Kits\8.0\Include\shared\pshpack8.h
+         Note: including file:    C:\Program Files (x86)\Windows Kits\8.0\Include\um\combaseapi.h
+         Note: including file:     C:\Program Files (x86)\Windows Kits\8.0\Include\shared\apiset.h
+         Note: including file:     C:\Program Files (x86)\Windows Kits\8.0\Include\shared\apisetcconv.h
+         Note: including file:     C:\Program Files (x86)\Windows Kits\8.0\Include\shared\pshpack8.h
+         Note: including file:     C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\stdlib.h
+         Note: including file:      C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\crtdefs.h
+         Note: including file:      C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\limits.h
+         Note: including file:       C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\crtdefs.h
+         Note: including file:     C:\Program Files (x86)\Windows Kits\8.0\Include\um\unknwnbase.h
+         Note: including file:     C:\Program Files (x86)\Windows Kits\8.0\Include\um\objidlbase.h
+         Note: including file:     C:\Program Files (x86)\Windows Kits\8.0\Include\shared\guiddef.h
+         Note: including file:     C:\Program Files (x86)\Windows Kits\8.0\Include\um\cguid.h
+         Note: including file:     C:\Program Files (x86)\Windows Kits\8.0\Include\shared\poppack.h
+         Note: including file:    C:\Program Files (x86)\Windows Kits\8.0\Include\um\objidl.h
+         Note: including file:     c:\program files (x86)\windows kits\8.0\include\um\unknwn.h
+         Note: including file:    C:\Program Files (x86)\Windows Kits\8.0\Include\um\urlmon.h
+         Note: including file:     c:\program files (x86)\windows kits\8.0\include\um\oleidl.h
+         Note: including file:     c:\program files (x86)\windows kits\8.0\include\um\servprov.h
+         Note: including file:     c:\program files (x86)\windows kits\8.0\include\um\msxml.h
+         Note: including file:      c:\program files (x86)\windows kits\8.0\include\um\oaidl.h
+         Note: including file:    C:\Program Files (x86)\Windows Kits\8.0\Include\um\propidl.h
+         Note: including file:    C:\Program Files (x86)\Windows Kits\8.0\Include\shared\poppack.h
+         Note: including file:   C:\Program Files (x86)\Windows Kits\8.0\Include\um\oleauto.h
+         Note: including file:    C:\Program Files (x86)\Windows Kits\8.0\Include\shared\pshpack8.h
+         Note: including file:    C:\Program Files (x86)\Windows Kits\8.0\Include\shared\poppack.h
+         Note: including file:   C:\Program Files (x86)\Windows Kits\8.0\Include\shared\poppack.h
+         Note: including file:  C:\Program Files (x86)\Windows Kits\8.0\Include\um\commdlg.h
+         Note: including file:   C:\Program Files (x86)\Windows Kits\8.0\Include\um\prsht.h
+         Note: including file:   C:\Program Files (x86)\Windows Kits\8.0\Include\shared\pshpack1.h
+         Note: including file:   C:\Program Files (x86)\Windows Kits\8.0\Include\shared\poppack.h
+         Note: including file:  C:\Program Files (x86)\Windows Kits\8.0\Include\shared\stralign.h
+         Note: including file:  C:\Program Files (x86)\Windows Kits\8.0\Include\um\winsvc.h
+         Note: including file:  C:\Program Files (x86)\Windows Kits\8.0\Include\um\mcx.h
+         Note: including file:  C:\Program Files (x86)\Windows Kits\8.0\Include\um\imm.h
+         Note: including file:   C:\Program Files (x86)\Windows Kits\8.0\Include\um\ime_cmodes.h
+         Note: including file: c:\users\joel\mtsu\csci_3160\hw5\homework5_part_2_4\windows32\resource.h
+       ResourceCompile:
+         C:\Program Files (x86)\Windows Kits\8.0\bin\x86\rc.exe /l"0x0409" /nologo /fo"Debug\framework.res" framework.rc 
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Joel\MTSU\CSCI_3160\HW5\HomeWork5_Part_2_4\Debug\windows32.exe" /INCREMENTAL:NO /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Joel\MTSU\CSCI_3160\HW5\HomeWork5_Part_2_4\Debug\windows32.pdb" /MAP /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE:NO /IMPLIB:"C:\Users\Joel\MTSU\CSCI_3160\HW5\HomeWork5_Part_2_4\Debug\windows32.lib" /MACHINE:X86 /SAFESEH:NO Debug\framework.res
+         Debug\framework.obj
+         Debug\io.obj
+         Debug\main.obj
+     1>framework.obj : warning LNK4075: ignoring '/EDITANDCONTINUE' due to '/OPT:LBR' specification
+         windows32.vcxproj -> C:\Users\Joel\MTSU\CSCI_3160\HW5\HomeWork5_Part_2_4\Debug\windows32.exe
+     1>Done Building Project "C:\Users\Joel\MTSU\CSCI_3160\HW5\HomeWork5_Part_2_4\windows32\windows32.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:03.47

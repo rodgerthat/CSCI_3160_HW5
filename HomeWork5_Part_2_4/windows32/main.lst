@@ -1,0 +1,176 @@
+Microsoft (R) Macro Assembler Version 11.00.61030.0	    02/29/16 10:02:00
+main.asm						     Page 1 - 1
+
+
+				; FileName : main.asm
+				; Author : Norris, Joel R
+				; Date : 2016_02_28
+				; Project : HomeWork 5, Part 2, 4
+				; Description : 
+				;	Add 100 + 99 + 98 + ... + N 
+				;	as long as the sum is less than 2,970
+
+				; Assembler directives
+				.586				; accept instructions for 586
+				.MODEL FLAT			; generate code for flat memory
+				INCLUDE io.h		; header file for input / output
+			      C ; IO.H -- header file for I/O macros (listing suppressed)
+			      C .NOLIST      ; turn off listing
+			      C .LIST        ; begin listing
+			      C 
+				.STACK 4096			; reserve 4096-byte stack
+
+ 00000000			.DATA				; DATA section begins : reserve storage for data
+
+ 00000000  00000014 [		asciiIn		DWORD	20 DUP (?)
+	    00000000
+	   ]
+ 00000050 00000000		N			DWORD	00h
+ 00000054 00000000		sum			DWORD	00h
+ 00000058 00000B9A		rangeMax	DWORD	0B9Ah	; 2,970
+
+ 0000005C 45 6E 74 65 72	prompt		BYTE	"Enter an integer", 00h
+	   20 61 6E 20 69
+	   6E 74 65 67 65
+	   72 00
+
+ 0000006D 52 65 73 75 6C	msgLabel	BYTE	"Result", 00h
+	   74 00
+ 00000074 0D 0A			msgTxt		BYTE	0dh, 0ah
+ 00000076 4C 61 72 67 65	lrgstSumTxt	BYTE	"Largest sum, 100+99+...+N < 2970:"
+	   73 74 20 73 75
+	   6D 2C 20 31 30
+	   30 2B 39 39 2B
+	   2E 2E 2E 2B 4E
+	   20 3C 20 32 39
+	   37 30 3A
+ 00000097  0000000B [		lrgstSum	BYTE	11 DUP (?), 0dh, 0ah
+	    00
+	   ] 0D 0A
+ 000000A4 53 6D 61 6C 6C	lrgstNTxt	BYTE	"Smallest N with 100+99+...+N < 2970:"
+	   65 73 74 20 4E
+	   20 77 69 74 68
+	   20 31 30 30 2B
+	   39 39 2B 2E 2E
+	   2E 2B 4E 20 3C
+	   20 32 39 37 30
+	   3A
+ 000000C8  0000000B [		lrgstN		BYTE	11 DUP (?), 0dh, 0ah
+	    00
+	   ] 0D 0A
+
+ 00000000			.CODE				; Code section begins
+
+ 00000000			_MainProc			PROC
+
+							; initialize
+ 00000000  B8 00000000					mov		eax, 0		; accumulator
+ 00000005  BB 00000000					mov		ebx, 0		; buffer
+ 0000000A  B9 00000000					mov		ecx, 0		; counter
+ 0000000F  BA 00000000					mov		edx, 0		; data
+
+							; read integer, convert, assign to memory
+							input	prompt, asciiIn, 20
+							atod	asciiIn
+ 00000041  A3 00000050 R				mov		N, eax
+
+							; init loop
+ 00000046  BB 00000064					mov ebx, 064h
+ 0000004B  B8 00000000					mov eax, 00h
+
+ 00000050			beginLoop:	
+ 00000050  3B 05 00000058 R				cmp		eax, rangeMax					; while count < rangeMax
+ 00000056  74 0D					je done
+
+ 00000058  03 C3					add eax, ebx		; add sum to n	 ( accumulator, accumulate )
+
+ 0000005A  3B 1D 00000050 R				cmp ebx, N			; limit, N, if ebx = N, we're done. 
+ 00000060  74 03					je	done
+ 00000062  4B						dec	ebx				; add one to n	( 1 + 2 + 3 +...+N )
+							
+ 00000063  EB EB					jmp		beginLoop	
+
+ 00000065			done:		
+							; output results
+							dtoa	lrgstSum, eax
+							dtoa	lrgstN, ebx 
+
+							output	msgLabel, msgTxt
+							output	lrgstSumTxt, lrgstSum
+							output	lrgstNTxt, lrgstN
+ 000000E0  B8 00000000					mov		eax, 0;
+ 000000E5  C3						ret
+
+ 000000E6			_MainProc			ENDP						; end of main procedure
+									
+									END							; end of source code
+Microsoft (R) Macro Assembler Version 11.00.61030.0	    02/29/16 10:02:00
+main.asm						     Symbols 2 - 1
+
+
+
+
+Macros:
+
+                N a m e                 Type
+
+atod . . . . . . . . . . . . . .	Proc
+atow . . . . . . . . . . . . . .	Proc
+dtoa . . . . . . . . . . . . . .	Proc
+input  . . . . . . . . . . . . .	Proc
+output . . . . . . . . . . . . .	Proc
+wtoa . . . . . . . . . . . . . .	Proc
+
+
+Segments and Groups:
+
+                N a m e                 Size     Length   Align   Combine Class
+
+FLAT . . . . . . . . . . . . . .	GROUP
+STACK  . . . . . . . . . . . . .	32 Bit	 00001000 Para	  Stack	  'STACK'	 
+_DATA  . . . . . . . . . . . . .	32 Bit	 000000D5 Para	  Public  'DATA'	
+_TEXT  . . . . . . . . . . . . .	32 Bit	 000000E6 Para	  Public  'CODE'	
+
+
+Procedures, parameters, and locals:
+
+                N a m e                 Type     Value    Attr
+
+_MainProc  . . . . . . . . . . .	P Near	 00000000 _TEXT	Length= 000000E6 Public
+  beginLoop  . . . . . . . . . .	L Near	 00000050 _TEXT	
+  done . . . . . . . . . . . . .	L Near	 00000065 _TEXT	
+
+
+Symbols:
+
+                N a m e                 Type     Value    Attr
+
+@CodeSize  . . . . . . . . . . .	Number	 00000000h   
+@DataSize  . . . . . . . . . . .	Number	 00000000h   
+@Interface . . . . . . . . . . .	Number	 00000000h   
+@Model . . . . . . . . . . . . .	Number	 00000007h   
+@code  . . . . . . . . . . . . .	Text   	 _TEXT
+@data  . . . . . . . . . . . . .	Text   	 FLAT
+@fardata?  . . . . . . . . . . .	Text   	 FLAT
+@fardata . . . . . . . . . . . .	Text   	 FLAT
+@stack . . . . . . . . . . . . .	Text   	 FLAT
+N  . . . . . . . . . . . . . . .	DWord	 00000050 _DATA	
+_getInput  . . . . . . . . . . .	L Near	 00000000 FLAT	External
+_showOutput  . . . . . . . . . .	L Near	 00000000 FLAT	External
+asciiIn  . . . . . . . . . . . .	DWord	 00000000 _DATA	
+atodproc . . . . . . . . . . . .	L Near	 00000000 FLAT	External
+atowproc . . . . . . . . . . . .	L Near	 00000000 FLAT	External
+dtoaproc . . . . . . . . . . . .	L Near	 00000000 FLAT	External
+lrgstNTxt  . . . . . . . . . . .	Byte	 000000A4 _DATA	
+lrgstN . . . . . . . . . . . . .	Byte	 000000C8 _DATA	
+lrgstSumTxt  . . . . . . . . . .	Byte	 00000076 _DATA	
+lrgstSum . . . . . . . . . . . .	Byte	 00000097 _DATA	
+msgLabel . . . . . . . . . . . .	Byte	 0000006D _DATA	
+msgTxt . . . . . . . . . . . . .	Byte	 00000074 _DATA	
+prompt . . . . . . . . . . . . .	Byte	 0000005C _DATA	
+rangeMax . . . . . . . . . . . .	DWord	 00000058 _DATA	
+sum  . . . . . . . . . . . . . .	DWord	 00000054 _DATA	
+wtoaproc . . . . . . . . . . . .	L Near	 00000000 FLAT	External
+
+	   0 Warnings
+	   0 Errors
