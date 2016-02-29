@@ -1,7 +1,7 @@
 ; FileName : main.asm
 ; Author : Norris, Joel R
 ; Date : 2016_02_08
-; Project : HomeWork 5
+; Project : HomeWork 5, Part 1
 
 ; Assembler directives
 .586				; accept instructions for 586
@@ -12,91 +12,58 @@ INCLUDE io.h		; header file for input / output
 .DATA				; DATA section begins : reserve storage for data
 
 asciiIn		DWORD	20 DUP (?)
-prompt		BYTE	"Enter a character", 00h
+N			DWORD	00h
+sum			DWORD	00h
+rangeMax	DWORD	0268Eh	; 9870
+
+prompt		BYTE	"Enter an integer", 00h
 
 msgLabel	BYTE	"Result", 00h
-msgText		BYTE	"Upper count: "
-asciiUpper	BYTE	11 DUP (?), 0dh, 0ah 
-			BYTE	"Lower count: "
-asciiLower	BYTE	11 DUP (?), 0dh, 0ah
-			BYTE	"Other count: "
-asciiOther	BYTE	11 DUP (?), 00h
+msgTxt		BYTE	0dh, 0ah
+lrgstSumTxt	BYTE	"Largest 1+2+...+N < 9870:"
+lrgstSum	BYTE	11 DUP (?), 0dh, 0ah
+lrgstNTxt	BYTE	"Largest N with 1+2+...+N < 9870:"
+lrgstN		BYTE	11 DUP (?), 0dh, 0ah
 
-lowerCount	DWORD	0
-upperCount	DWORD	0
-otherCount	DWORD	0
-count		DWORD	0
-
-asciiHex	DWORD	0
-lowera		DWORD	061h
-lowerz		DWORD	07Ah				
-upperA		DWORD	041h
-upperZ		DWORD	05Ah
-			
 .CODE				; Code section begins
 
 _MainProc			PROC
 
-			mov		ecx, 0
-			mov		eax, 0
+			; initialize
+			mov		eax, 0		; accumulator
+			mov		ebx, 0		; buffer
+			mov		ecx, 0		; counter
+			mov		edx, 0		; data
 
-beginLoop:	cmp		ecx, 10					; while count < 10
-			jge		done	
-
-			; read in character
+			; read integer, convert, assign to memory
 			input	prompt, asciiIn, 20
-			;atod	asciiIn					; convert asciiIn to 2's compliment DWORD int
-			;mov		asciiHex, eax
-			mov		eax, asciiIn
+			atod	asciiIn
+			mov		N, eax
+
+			; init loop
+			mov ebx, 01h
+			mov eax, 00h
+
+beginLoop:	
+			cmp		eax, rangeMax					; while count < rangeMax
+			je done
+
+			add eax, ebx		; add sum to n	 ( accumulator, accumulate )
+
+			cmp ebx, N			; limit, N, if ebx = N, we're done. 
+			je	done
+			inc	ebx				; add one to n	( 1 + 2 + 3 +...+N )
 			
-			; compare ranges, A ~ Z, a ~ z
-			; start at the low end, in hex, a, and work our way up through Z 
-			; jump accordingly
-			cmp eax, upperA			; i < A
-			jl isOther					
-			cmp eax, upperZ			; i <= Z
-			jle isUpper
-			cmp eax, lowera			; i > a
-			jl isOther
-			cmp eax, lowerz			; i <= z
-			jle isLower
-
-isOther:	
-			mov edx, 0
-			mov edx, otherCount
-			inc	edx
-			mov otherCount, edx
-			jmp endLoop
-
-isUpper:	
-			mov edx, 0
-			mov edx, upperCount
-			inc	edx
-			mov upperCount, edx
-			jmp endLoop
-
-isLower:	
-			mov edx, 0
-			mov edx, lowerCount
-			inc	edx
-			mov lowerCount, edx
-
-doCount:
-			mov edx, [ebx]
-			inc edx
-			mov [ebx], edx
-
-endLoop:	
-			inc ecx			; counter ++
-			jmp	beginLoop	; manual loops r fun.	
+			jmp		beginLoop	
 
 done:		
 			; output results
-			dtoa	asciiUpper, upperCount
-			dtoa	asciiLower, lowerCount
-			dtoa	asciiOther, otherCount
+			dtoa	lrgstSum, eax
+			dtoa	lrgstN, ebx 
 
-			output	msgLabel, msgText
+			output	msgLabel, msgTxt
+			output	lrgstSumTxt, lrgstSum
+			output	lrgstNTxt, lrgstN
 			mov		eax, 0;
 			ret
 
