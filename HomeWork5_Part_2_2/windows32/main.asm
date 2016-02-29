@@ -1,7 +1,7 @@
 ; FileName : main.asm
 ; Author : Norris, Joel R
-; Date : 2016_02_08
-; Project : HomeWork 5, Part 1
+; Date : 2016_02_28
+; Project : HomeWork 5, Part 2
 
 ; Assembler directives
 .586				; accept instructions for 586
