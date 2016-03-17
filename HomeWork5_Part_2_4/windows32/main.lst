@@ -1,4 +1,4 @@
-Microsoft (R) Macro Assembler Version 11.00.61030.0	    02/29/16 10:02:00
+Microsoft (R) Macro Assembler Version 11.00.61030.0	    03/15/16 17:38:11
 main.asm						     Page 1 - 1
 
 
@@ -96,15 +96,13 @@ main.asm						     Page 1 - 1
 							dtoa	lrgstN, ebx 
 
 							output	msgLabel, msgTxt
-							output	lrgstSumTxt, lrgstSum
-							output	lrgstNTxt, lrgstN
- 000000E0  B8 00000000					mov		eax, 0;
- 000000E5  C3						ret
+ 000000AE  B8 00000000					mov		eax, 0;
+ 000000B3  C3						ret
 
- 000000E6			_MainProc			ENDP						; end of main procedure
+ 000000B4			_MainProc			ENDP						; end of main procedure
 									
 									END							; end of source code
-Microsoft (R) Macro Assembler Version 11.00.61030.0	    02/29/16 10:02:00
+Microsoft (R) Macro Assembler Version 11.00.61030.0	    03/15/16 17:38:11
 main.asm						     Symbols 2 - 1
 
 
@@ -129,14 +127,14 @@ Segments and Groups:
 FLAT . . . . . . . . . . . . . .	GROUP
 STACK  . . . . . . . . . . . . .	32 Bit	 00001000 Para	  Stack	  'STACK'	 
 _DATA  . . . . . . . . . . . . .	32 Bit	 000000D5 Para	  Public  'DATA'	
-_TEXT  . . . . . . . . . . . . .	32 Bit	 000000E6 Para	  Public  'CODE'	
+_TEXT  . . . . . . . . . . . . .	32 Bit	 000000B4 Para	  Public  'CODE'	
 
 
 Procedures, parameters, and locals:
 
                 N a m e                 Type     Value    Attr
 
-_MainProc  . . . . . . . . . . .	P Near	 00000000 _TEXT	Length= 000000E6 Public
+_MainProc  . . . . . . . . . . .	P Near	 00000000 _TEXT	Length= 000000B4 Public
   beginLoop  . . . . . . . . . .	L Near	 00000050 _TEXT	
   done . . . . . . . . . . . . .	L Near	 00000065 _TEXT	
 

@@ -1,12 +1,11 @@
-Microsoft (R) Macro Assembler Version 11.00.61030.0	    02/28/16 19:52:35
+Microsoft (R) Macro Assembler Version 11.00.61030.0	    03/15/16 17:25:47
 main.asm						     Page 1 - 1
 
 
 				; FileName : main.asm
 				; Author : Norris, Joel R
-				; Date : 2016_02_08
+				; Date : 2016_02_28
 				; Project : HomeWork 5, Part 1
-				; ToDo : rewrite data to use smaller sizes ( 
 
 				; Assembler directives
 				.586				; accept instructions for 586
@@ -67,57 +66,46 @@ main.asm						     Page 1 - 1
  00000000  B9 00000000					mov		ecx, 0
  00000005  B8 00000000					mov		eax, 0
 
- 0000000A  83 F9 0A		beginLoop:	cmp		ecx, 10					; while count < 10
- 0000000D  7D 5F					jge		done	
+ 0000000A  83 3D 000000C2 R	beginLoop:	cmp		count, 10					; while count < 10
+	   0A
+ 00000011  7D 61					jge		done	
 
 							; read in character
 							input	prompt, asciiIn, 20
- 0000002D  A1 00000000 R				mov		eax, asciiIn
-							
-							; compare ranges, A ~ Z, a ~ z
-							; start at the low end, in hex, A, and work our way up through z 
-							; pass a memory address of which counter to increment 
-							; jump accordingly
+ 00000031  A1 00000000 R				mov		eax, asciiIn
 
- 00000032  3B 05 000000D2 R				cmp eax, upperA			; i < A
- 00000038  BB 000000BE R				mov ebx, OFFSET [otherCount]	
- 0000003D  7C 27					jl doCount
+ 00000036  3B 05 000000CA R				cmp eax, lowera
+ 0000003C  7C 10					jnge notLower
+ 0000003E  3B 05 000000CE R				cmp eax, lowerz
+ 00000044  7F 08					jnle notLower
+ 00000046  FF 05 000000B6 R				inc lowerCount
+ 0000004C  EB 1E					jmp next
 
- 0000003F  3B 05 000000D6 R				cmp eax, upperZ			; i <= Z
- 00000045  BB 000000BA R				mov ebx, OFFSET [upperCount]
- 0000004A  7E 1A					jle doCount
+ 0000004E  3B 05 000000D2 R	notLower:	cmp eax, upperA
+ 00000054  7C 10					jl other
+ 00000056  3B 05 000000D6 R				cmp eax, upperZ
+ 0000005C  7F 08					jg other
+ 0000005E  FF 05 000000BA R				inc upperCount
+ 00000064  EB 06					jmp next
 
- 0000004C  3B 05 000000CA R				cmp eax, lowera			; i > a
- 00000052  BB 000000BE R				mov ebx, OFFSET [otherCount]
- 00000057  7C 0D					jl doCount
+ 00000066  FF 05 000000BE R	other:		inc otherCount
+ 0000006C  FF 05 000000C2 R	next:		inc count
+ 00000072  EB 96					jmp beginLoop
 
- 00000059  3B 05 000000CE R				cmp eax, lowerz			; i <= z
- 0000005F  BB 000000B6 R				mov ebx, OFFSET [lowerCount]
- 00000064  7E 00					jle doCount
-
- 00000066			doCount:
-							; increment the correct counter, based on memory address
- 00000066  8B 13					mov edx, [ebx]
- 00000068  42						inc edx
- 00000069  89 13					mov [ebx], edx
-
- 0000006B  41						inc ecx			; counter ++
- 0000006C  EB 9C					jmp	beginLoop	; manual loops r fun.	
-
- 0000006E			done:		
+ 00000074			done:		
 							; output results
 							dtoa	asciiUpper, upperCount
 							dtoa	asciiLower, lowerCount
 							dtoa	asciiOther, otherCount
 
 							output	msgLabel, msgText
- 000000DB  B8 00000000					mov		eax, 0;
- 000000E0  C3						ret
+ 000000E1  B8 00000000					mov		eax, 0;
+ 000000E6  C3						ret
 
- 000000E1			_MainProc			ENDP						; end of main procedure
+ 000000E7			_MainProc			ENDP						; end of main procedure
 									
 									END							; end of source code
-Microsoft (R) Macro Assembler Version 11.00.61030.0	    02/28/16 19:52:35
+Microsoft (R) Macro Assembler Version 11.00.61030.0	    03/15/16 17:25:47
 main.asm						     Symbols 2 - 1
 
 
@@ -142,17 +130,19 @@ Segments and Groups:
 FLAT . . . . . . . . . . . . . .	GROUP
 STACK  . . . . . . . . . . . . .	32 Bit	 00001000 Para	  Stack	  'STACK'	 
 _DATA  . . . . . . . . . . . . .	32 Bit	 000000DA Para	  Public  'DATA'	
-_TEXT  . . . . . . . . . . . . .	32 Bit	 000000E1 Para	  Public  'CODE'	
+_TEXT  . . . . . . . . . . . . .	32 Bit	 000000E7 Para	  Public  'CODE'	
 
 
 Procedures, parameters, and locals:
 
                 N a m e                 Type     Value    Attr
 
-_MainProc  . . . . . . . . . . .	P Near	 00000000 _TEXT	Length= 000000E1 Public
+_MainProc  . . . . . . . . . . .	P Near	 00000000 _TEXT	Length= 000000E7 Public
   beginLoop  . . . . . . . . . .	L Near	 0000000A _TEXT	
-  doCount  . . . . . . . . . . .	L Near	 00000066 _TEXT	
-  done . . . . . . . . . . . . .	L Near	 0000006E _TEXT	
+  notLower . . . . . . . . . . .	L Near	 0000004E _TEXT	
+  other  . . . . . . . . . . . .	L Near	 00000066 _TEXT	
+  next . . . . . . . . . . . . .	L Near	 0000006C _TEXT	
+  done . . . . . . . . . . . . .	L Near	 00000074 _TEXT	
 
 
 Symbols:

@@ -65,8 +65,6 @@ done:
 			dtoa	lrgstN, ebx 
 
 			output	msgLabel, msgTxt
-			output	lrgstSumTxt, lrgstSum
-			output	lrgstNTxt, lrgstN
 			mov		eax, 0;
 			ret
 
